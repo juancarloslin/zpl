@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [UPCEAN] [SKU] [PRODUCTNAME] [SHIPMENT] [SHIPMENTLINE] [MATCH RULE] [QUANTITYLINE] [QUANTITY]
+#
+#[IMPRESORA] = impresora
+#[UPCEAN] = nombre del importador
+#[SKU] = direccion
+#[PRODUCTNAME] = RUC
+#[SHIPMENT] = RE
+#[SHIPMENTLINE] = RP
+#[MATCHRULE] = MatchRule
+#[QUANTITYLINE] = REG
+#[QUANTITY] = Cantidad
+#
+#
+# Crea el formato de impresion print .zpl
+
+TEMPLATE_FILE=/opt/labelprint/zpl/MOLabel10_Template.zpl
+#TEMPLATE_FILE=/home/lin/labelprint/zpl/MOLabel10_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printlabel10.zpl
+
+/usr/bin/sed "s/:UPCEAN:/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/:SKU:/$3/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:PRODUCTNAME:/$4/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:SHIPMENT:/$5/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:SHIPMENTLINE:/$6/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:MATCHRULE:/$7/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:QUANTITYLINE:/$8/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:QUANTITY:/$9/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE

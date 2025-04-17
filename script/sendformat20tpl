@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# send Label format
+
+#TEMPLATE_HOME=/home/lin/labelprint/zpl
+TEMPLATE_HOME=/opt/labelprint/zpl-tpl
+if [ -z "$1" ]
+then
+echo "Send Label format printer.. usage sendformat [printername]"
+exit 1
+else
+#
+echo "Send Label format to $1"
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOL20.zpl
+exit 0
+
+fi

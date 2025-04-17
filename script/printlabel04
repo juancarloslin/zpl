@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [EAN13] [PRECIO] [CANTIDAD]
+#
+#[IMPRESORA] = nombre de impresora instalada
+#[EAN13] = codigo de barras EAN13 12 digitos sin digito verificador
+#[PRECIO] = linea de texto de precio
+#[CANTIDAD] = cantidad de etiquetas a imprimir
+#
+#
+# Crea el formato de impresion print.bas
+#TSC Printer
+TEMPLATE_FILE=/opt/rtlabel/MOLabel04_Template.tpl
+#Zebra Printer
+#TEMPLATE_FILE=/opt/rtlabel/MOLabel04_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printlabel04.tpl
+
+/usr/bin/sed "s/UPCEAN/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/CURRENCY/$3/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/PRICE/$4/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/QUANTITY/$5/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE

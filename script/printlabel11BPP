@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [UPCEAN] [SKU] [PRICELIST] [PRICERT] [LABELQUANTITY]
+#
+#[IMPRESORA] = impresora
+#[UPCEAN] = UPCEAN
+#[SKU] = SKU
+#[PRICELIST] = PriceList
+#[PRICERT] = PriceRT
+#[LABELQUANTITY] = Cantidad
+#
+#
+# Crea el formato de impresion print.zpl
+
+TEMPLATE_FILE=/opt/labelprint/zpl/MOLabel11BPP_Template.zpl
+#TEMPLATE_FILE=/home/lin/labelprint/zpl/MOLabel11BPP_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printlabel11bpp.zpl
+
+/usr/bin/sed "s/:UPCEAN:/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/:SKU:/${3}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:PRICELIST:/${4}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:PRICERT:/${5}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:QUANTITY:/${6}/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE

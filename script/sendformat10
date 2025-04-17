@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# send Label format
+
+#TEMPLATE_HOME=/home/lin/labelprint/zpl
+TEMPLATE_HOME=/opt/labelprint/zpl
+if [ -z "$1" ]
+then
+echo "Send Label format printer.. usage sendformat [printername]"
+exit 1
+else
+#
+echo "Send Label format to $1"
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel10.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11G.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11L.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11BL.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11BP.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11B.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11I.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11I2.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel12G.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel12L.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel12I.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel12BL.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel12BP.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel12B.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel13BP.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel128BP.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11BPP.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel11BPT.zpl
+exit 0
+
+fi

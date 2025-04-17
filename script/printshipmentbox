@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [SHIPMENT] [TOTALBOX] [BOX]
+#
+#[IMPRESORA] = impresora
+#[SHIPMENT] = numero de embarque
+#[TOTALBOX] = total cajas
+#[BOX] = numero de caja
+#
+#
+# Crea el formato de impresion print .zpl
+
+TEMPLATE_FILE=/opt/labelprint/zpl/MOLabel20_Template.zpl
+#TEMPLATE_FILE=/home/lin/labelprint/zpl/MOLabel10_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printlabel20.zpl
+
+/usr/bin/sed "s/:SHIPMENT:/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/:TOTALBOX:/$3/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:BOX:/$4/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE

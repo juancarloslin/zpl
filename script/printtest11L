@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [IMPORTAOR] [DIRECCION] [CIUDAD] [TELEFONO] [RUC] [RE] [RP] [REG] [MARCA] [VTO] [DOCUMENTNOTE] [QR] [CANTIDAD]
+#
+#[IMPRESORA] = impresora
+#[IMPORTADOR] = nombre del importador
+#[DIRECCION] = direccion
+#[CIUDAD] = ciudad
+#[TELEFONO] = Telefono
+#[RUC] = RUC
+#[RE] = RE
+#[RP] = RP
+#[REG] = REG
+#[MARCA] = MARCA
+#[VTO] = VTO
+#[DOCUMENTNOTE] = DOCUMENTNOTE
+#[QRCODE] = QR
+#[CANTIDAD] = Cantidad
+#
+#
+# Crea el formato de impresion print.zpl
+
+TEMPLATE_FILE=/opt/labelprint/zpl/test11L_Template.zpl
+#TEMPLATE_FILE=/home/lin/labelprint/zpl/MOLabel12L_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printtest11L.zpl
+
+/usr/bin/sed "s/:IMPORTADOR:/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/:DIRECCION:/$3/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:CIUDAD:/$4/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:RUC:/$5/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:PHONE:/$6/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:RE:/$7/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:RP:/$8/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:REG:/$9/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:MARCA:/${10}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:VTO:/${11}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:DOCUMENTNOTE:/${12}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:QRCODE:/${13}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:QUANTITY:/${14}/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE
