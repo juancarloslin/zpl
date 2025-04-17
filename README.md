@@ -18,4 +18,5 @@ copy the scripts to /usr/local/bin/
 
 cp printlabel10 /usr/local/bin/
 printlabel10 [PRINTER] [UPCEAN] [SKU] [PRODUCTNAME] [SHIPMENT] [SHIPMENTLINE] [MATCH RULE] [QUANTITYLINE] [QUANTITY]
+
 ---
