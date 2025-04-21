@@ -1,6 +1,6 @@
 ^XA
-^DFR:MOLabel10.ZPL^FS
-^MD15^FS (Darkness 15)
+^DFR:MOLabel10.ZPL
+^PW320^LL96^FS
 ^FO10,25^AAN,6,4^FN1^FS  (Importador)
 ^FO10,35^AAN,6,4^FN2^FS  (Direccion)
 ^FO10,45^AAN,6,4^FN3^FS  (RUC)

@@ -1,0 +1,5 @@
+^XA
+^XFE:WHLabel.ZPL^FS
+^FN1^FDGIOWHS_STK-P1A-1-01-1^FS
+^PQ10,100,1,Y^FS (Quantity)
+^XZ
