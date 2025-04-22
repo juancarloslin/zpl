@@ -5,6 +5,5 @@
 ^FN3^FD:MARCA:^FS  (Marca)
 ^FN4^FD:VTO:^FS  (Vencimiento)
 ^FN5^FD:DOCUMENTNOTE:^FS  (DocumentNote)
-^FN6^FDHA,:QRCODE:^FS  (QR)
 ^PQ:QUANTITY:,100,1,Y^FS (Quantity)
 ^XZ

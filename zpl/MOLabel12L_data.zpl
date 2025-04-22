@@ -5,6 +5,5 @@
 ^FN3^FDPUPA ^FS  (Marca)
 ^FN4^FDVto ver embalaje^FS  (Vencimiento)
 ^FN5^FDContiene Sulfito - Embotellado en Italia - Embotellado por ABC^FS  (DocumentNote)
-^FN6^FDHA,A7D92F^FS  (QR)
 ^PQ2,100,1,Y^FS (Quantity)
 ^XZ

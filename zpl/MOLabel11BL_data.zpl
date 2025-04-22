@@ -8,6 +8,6 @@
 ^FN6^FDRP 12967^FS  (RPN)
 ^FN7^FDReg 2665 ^FS  (REG)
 ^FN8^FDVto ver embalaje^FS  (Vencimiento)
-^FN9^FDHA,A7D92F^FS  (QR)
+^FN9^FDHA,https://product.monalisa.com.py/3337875660617?shipmentid=1010101^FS  (QR)
 ^PQ10,100,1,Y^FS (Quantity)
 ^XZ
