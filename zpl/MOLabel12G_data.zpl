@@ -5,6 +5,6 @@
 ^FN3^FD^FS  (Marca)
 ^FN4^FD^FS  (Vencimiento)
 ^FN5^FD^FS  (DocumentNote)
-^FN6^FDHA,A7D92F^FS  (QR)
+^FN6^FDHA,https://product.monalisa.com.py/3337875660617?shipmentid=1010101^FS  (QR)
 ^PQ2,100,1,Y^FS (Quantity)
 ^XZ

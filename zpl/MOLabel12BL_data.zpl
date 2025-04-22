@@ -5,7 +5,7 @@
 ^FN3^FDPUPA ^FS  (Marca)
 ^FN4^FDVto ver embalaje^FS  (Vencimiento)
 ^FN5^FDContiene Sulfito - Embotellado en Italia - Embotellado por ABC^FS  (DocumentNote)
-^FN6^FDHA,A7D92F^FS  (QR)
+^FN6^FDHA,https://producto.monalisa.com.py/3337875660617?shipmentid=1010101^FS  (QR)
 ^FN7^FD7730905190171^FS  (UPCEAN)
-^PQ10,100,1,Y^FS (Quantity)
+^PQ1,100,1,Y^FS (Quantity)
 ^XZ
