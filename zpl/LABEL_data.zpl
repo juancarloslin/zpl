@@ -1,0 +1,8 @@
+^XA
+^XFE:LABEL.ZPL^FS
+^FN1^FDFab.: 20250425^FS
+^FN2^FDVto.: 20250425^FS
+^FN3^FDLote: 2025C^FS
+^FN4^FDQA,http://product.monalisa.com.py/?fn1=20250425&fn2=20250425&fn3=2025C^FS
+^PQ1,100,1,Y^FS
+^XZ
