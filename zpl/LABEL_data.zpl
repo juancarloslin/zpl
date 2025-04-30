@@ -3,7 +3,6 @@
 ^FN1^FDFab.: 20250425^FS
 ^FN2^FDVto.: 20250425^FS
 ^FN3^FDLote: 2025C^FS
-^FN4^FDHA,http://product.monalisa.com.py/?fn1=20250425&fn2=20250425&fn3=2025C
-^FS
+^FN4^FHHA,http://productmonalisacompyfn120250425fn220250425fn32025C
 ^PQ1,100,1,Y^FS
 ^XZ
