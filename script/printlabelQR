@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [QR] [LABELQUANTITY]
+#
+#[IMPRESORA] = impresora
+#[QR] = QR
+#[LABELQUANTITY] = Cantidad
+#
+#
+# Crea el formato de impresion print.zpl
+
+TEMPLATE_FILE=/opt/labelprint/zpl/MOQR_Template.zpl
+#TEMPLATE_FILE=/home/lin/labelprint/zpl/MOQR_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printlabelqr.zpl
+
+/usr/bin/sed "s/:QR:/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/:QUANTITY:/${3}/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE
