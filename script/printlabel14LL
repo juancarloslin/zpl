@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Imprime Etiqueta
+
+# Uso: imprime-etiqueta [IMPRESORA] [TITLE] [FOOT1] [FOOT2] [LABELQUANTITY]
+#
+#[IMPRESORA] = impresora
+#[TITLE] = titulo
+#[FOOT1] = nota 1
+#[FOOT2] = noa 2
+#[LABELQUANTITY] = Cantidad
+#
+#
+# Crea el formato de impresion print.zpl
+
+TEMPLATE_FILE=/opt/labelprint/zpl/MOLabel14LL_Template.zpl
+#TEMPLATE_FILE=/home/lin/labelprint/zpl/MOLabel14LL_Template.zpl
+OUTPUT_FILE=/tmp/${USER}_printlabel14ll.zpl
+
+/usr/bin/sed "s/:TITLE:/$2/g" $TEMPLATE_FILE > $OUTPUT_FILE
+/usr/bin/sed -i "s/:FOOT1:/${3}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:FOOT2:/${4}/g" $OUTPUT_FILE
+/usr/bin/sed -i "s/:QUANTITY:/${5}/g" $OUTPUT_FILE
+
+# Print to raw
+
+/usr/bin/lp -d $1 -o raw $OUTPUT_FILE
+cat $OUTPUT_FILE
