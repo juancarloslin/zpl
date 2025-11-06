@@ -34,6 +34,7 @@ echo "Send Label format to $1"
 /usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/WHLabel3.zpl
 /usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOQR.zpl
 /usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel14LL.zpl
+/usr/bin/lp -d $1 -o raw $TEMPLATE_HOME/MOLabel14LN.zpl
 exit 0
 
 fi
