@@ -1,6 +1,5 @@
 ^XA
 ^DFE:WHLabel3.ZPL^FS
-^MD15^FS (Darkness 15)
 ^PW800^LL320 (800x320 = 100mmx40mm)
 ^BY2
 ^FO45,25
